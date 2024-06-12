@@ -13,7 +13,7 @@ function Tooltip({ children, text }) {
 
   return (
     <div className="tooltip" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-      {isVisible && <span className="tooltiptext">{text}</span>}
+      {isVisible && <h2 className="tooltip">{text}</h2>}
       <br />
       {children}
     </div>
