@@ -7,11 +7,11 @@ const App = () => {
   return (
     <div>
         <Tooltip text="This is a tooltip for the first text">
-          Hover over me!
+          <h2>Hover over me!</h2>
         </Tooltip>
         <br />
         <Tooltip text="Another tooltip, even longer!">
-          This text has a longer tooltip description.
+          <p>This text has a longer tooltip description.</p>
         </Tooltip>
     </div>
   )
