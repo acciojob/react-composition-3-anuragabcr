@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Tooltip({ children, text }) {
+function Tooltip({ children, text, tag }) {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleMouseEnter = () => {
@@ -11,9 +11,25 @@ function Tooltip({ children, text }) {
     setIsVisible(false);
   };
 
+  const getTooltip = () => {
+    if (tag === "h2") {
+        return (
+            <h2 className='tooltip'>
+                <div className='tooltiptext'>{text}</div>
+            </h2>
+        )
+    } else {
+        return (
+            <p className='tooltip'>
+                <div className='tooltiptext'>{text}</div>
+            </p>
+        )
+    }
+  }
+
   return (
-    <div className="tooltip" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-      {isVisible && <h2 className="tooltip">{text}</h2>}
+    <div  onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      {isVisible && getTooltip()}
       <br />
       {children}
     </div>
