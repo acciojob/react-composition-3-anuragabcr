@@ -20,7 +20,7 @@ function Tooltip({ children, text, tag }) {
         )
     } else {
         return (
-            <p className='tooltip'>
+            <p className=''>
                 <div className='tooltiptext'>{text}</div>
             </p>
         )
